@@ -1,0 +1,48 @@
+GIT
+  remote: git://github.com/devrandom/net_dav.git
+  revision: 57a562071cde0739634edec9dfd10845271bb327
+  tag: v0.5.1
+  specs:
+    net_dav (0.5.1)
+      nokogiri
+
+PATH
+  remote: .
+  specs:
+    dav_sync (0.0.1)
+      thread (~> 0.2.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.2.5)
+    mini_portile2 (2.1.0)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    pkg-config (1.1.7)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.2)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
+    thread (0.2.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dav_sync!
+  net_dav!
+  rspec (~> 3.5.0)
+
+BUNDLED WITH
+   1.12.5
