@@ -61,13 +61,13 @@ module FTPSync
       end
 
       existing_paths.each do |path|
-        remote_mtime = client.mtime(path, true)
-        local_mtime = File.mtime(path)
-        if local_mtime > remote_mtime
+        if File.directory?(path)
+          process_dir(path)
+        else
+          remote_mtime = client.mtime(path, true)
+          local_mtime = File.mtime(path)
           #$stderr.puts "\t#{path}: remote_mtime=#{remote_mtime}, local_mtime=#{local_mtime}"
-          if File.directory?(path)
-            process_dir(path)
-          else
+          if local_mtime > remote_mtime
             puts "Uploading #{path} to the server"
             client.putbinaryfile(path, path) unless dry_run?
           end
